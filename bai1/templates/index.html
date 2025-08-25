@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dự đoán Iris - Flask + Bootstrap</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+  <div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+
+        <div class="card shadow-lg border-0 rounded-3">
+          <div class="card-header bg-primary text-white text-center">
+            <h3 class="mb-0">🌸 Dự đoán loài hoa Iris</h3>
+          </div>
+          <div class="card-body">
+
+            <form method="POST">
+              <div class="mb-3">
+                <label class="form-label">Sepal Length (cm)</label>
+                <input type="number" step="0.01" class="form-control" name="sl" required>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Sepal Width (cm)</label>
+                <input type="number" step="0.01" class="form-control" name="sw" required>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Petal Length (cm)</label>
+                <input type="number" step="0.01" class="form-control" name="pl" required>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Petal Width (cm)</label>
+                <input type="number" step="0.01" class="form-control" name="pw" required>
+              </div>
+
+              <div class="d-grid">
+                <button type="submit" class="btn btn-primary">Dự đoán</button>
+              </div>
+            </form>
+
+            {% if prediction %}
+            <div class="alert alert-info mt-4 text-center">
+              🌼 Kết quả dự đoán: <b>{{ prediction }}</b>
+            </div>
+            {% endif %}
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>
